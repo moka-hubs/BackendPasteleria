@@ -1,7 +1,6 @@
 package example.pasteleria.controller;
 
 
-import example.pasteleria.PasteleriaApplication;
 import example.pasteleria.model.Producto;
 import example.pasteleria.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,14 +21,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {
-    private final PasteleriaApplication pasteleriaApplication;
     @Autowired
     private ProductoService productoService;
-
-
-    ProductoController(PasteleriaApplication pasteleriaApplication) {
-        this.pasteleriaApplication = pasteleriaApplication;
-    }
 
 
     //Listar Todos
