@@ -11,11 +11,12 @@ import lombok.Data;
 @Table (name = "productos")
 public class Producto {
 
-    @Id 
+    @Id
+    @Column(nullable = false)
     private String codProducto;
 
     @Column (nullable = false)
-    private ImageIcon imagenProducto;
+    private String imagenProducto;
 
     @ManyToOne
     @JoinColumn (name = "id_categoria" , nullable = false)
