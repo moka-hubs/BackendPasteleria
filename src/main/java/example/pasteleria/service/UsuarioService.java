@@ -20,7 +20,7 @@ public class UsuarioService {
 
 
     //Buscar Por Id
-    public Usuario buscarUsuarioPorId (String id){
+    public Usuario buscarUsuarioPorId (Long id){
         return usuarioRepository.getReferenceById(id);
 
     }
@@ -34,14 +34,14 @@ public class UsuarioService {
 
     //Eliminar Usuario
 
-    public void eliminarUsuario (String id){
+    public void eliminarUsuario (Long id){
         Usuario usuario = buscarUsuarioPorId(id);
         usuarioRepository.delete(usuario);
     }
 
 
     //Actualizar Usuario
-    public Usuario actualizarUsuario (String id, Usuario usuario){
+    public Usuario actualizarUsuario (Long id, Usuario usuario){
         Usuario usuarioActualizar = buscarUsuarioPorId(id);
         usuarioActualizar.setNombreUsuario(usuario.getNombreUsuario());
         usuarioActualizar.setApellidoUsuario(usuario.getApellidoUsuario());
