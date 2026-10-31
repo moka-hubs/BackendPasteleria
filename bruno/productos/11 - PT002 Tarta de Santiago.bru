@@ -1,0 +1,29 @@
+meta {
+  name: 11 - PT002 Tarta de Santiago
+  type: http
+  seq: 11
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PT002",
+    "imagenProducto": "tartasantiago.png",
+    "categoriaProducto": {
+      "id_categoria": 6
+    },
+    "nombreProducto": "Tarta de Santiago",
+    "precioProducto": 6000,
+    "stockProducto": 22,
+    "descripcionProducto": "Tradicional tarta española hecha con almendras, azúcar, y huevos, una delicia para los amantes de los postres clásicos."
+  }
+}

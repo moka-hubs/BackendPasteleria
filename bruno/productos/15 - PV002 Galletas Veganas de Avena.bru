@@ -1,0 +1,29 @@
+meta {
+  name: 15 - PV002 Galletas Veganas de Avena
+  type: http
+  seq: 15
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PV002",
+    "imagenProducto": "galletasveganasavena.png",
+    "categoriaProducto": {
+      "id_categoria": 8
+    },
+    "nombreProducto": "Galletas Veganas de Avena",
+    "precioProducto": 4500,
+    "stockProducto": 28,
+    "descripcionProducto": "Crujientes y sabrosas, estas galletas son una excelente opción para un snack saludable y vegano."
+  }
+}

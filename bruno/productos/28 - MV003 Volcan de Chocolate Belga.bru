@@ -1,0 +1,29 @@
+meta {
+  name: 28 - MV003 Volcan de Chocolate Belga
+  type: http
+  seq: 28
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV003",
+    "imagenProducto": "volcan.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Volcán de Chocolate Belga",
+    "precioProducto": 6500,
+    "stockProducto": 24,
+    "descripcionProducto": "Delicioso pastelito individual de chocolate con un núcleo fundente y cálido que se desborda al primer corte. Ideal para acompañar con helado."
+  }
+}

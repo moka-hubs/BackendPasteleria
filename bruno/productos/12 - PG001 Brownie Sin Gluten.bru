@@ -1,0 +1,29 @@
+meta {
+  name: 12 - PG001 Brownie Sin Gluten
+  type: http
+  seq: 12
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PG001",
+    "imagenProducto": "browniesingluten.png",
+    "categoriaProducto": {
+      "id_categoria": 7
+    },
+    "nombreProducto": "Brownie Sin Gluten",
+    "precioProducto": 4000,
+    "stockProducto": 30,
+    "descripcionProducto": "Rico y denso, este brownie es perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor."
+  }
+}

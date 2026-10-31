@@ -1,0 +1,21 @@
+meta {
+  name: 08 - Productos Veganos
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8080/categorias
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "nombre_categoria": "Productos Veganos"
+  }
+}

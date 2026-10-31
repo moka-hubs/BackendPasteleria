@@ -1,0 +1,29 @@
+meta {
+  name: 25 - TE003 Torta de Aniversario Corazon
+  type: http
+  seq: 25
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TE003",
+    "imagenProducto": "tortaaniversario.png",
+    "categoriaProducto": {
+      "id_categoria": 9
+    },
+    "nombreProducto": "Torta de Aniversario Corazón",
+    "precioProducto": 58000,
+    "stockProducto": 3,
+    "descripcionProducto": "Hermosa torta con forma de corazón decorada con detalles florales en crema y un sabor especial a elección para celebrar el amor."
+  }
+}

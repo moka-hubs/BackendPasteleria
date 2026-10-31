@@ -1,0 +1,29 @@
+meta {
+  name: 24 - PV003 Queque Rustico de Platano y Nuez Vegano
+  type: http
+  seq: 24
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PV003",
+    "imagenProducto": "quequeganachevegano.png",
+    "categoriaProducto": {
+      "id_categoria": 8
+    },
+    "nombreProducto": "Queque Rústico de Plátano y Nuez Vegano",
+    "precioProducto": 3500,
+    "stockProducto": 16,
+    "descripcionProducto": "Queque húmedo y aromático elaborado 100% con ingredientes vegetales, plátanos maduros seleccionados y trozos de nueces."
+  }
+}

@@ -1,0 +1,29 @@
+meta {
+  name: 17 - TE002 Torta Especial de Boda
+  type: http
+  seq: 17
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TE002",
+    "imagenProducto": "tortaboda.png",
+    "categoriaProducto": {
+      "id_categoria": 9
+    },
+    "nombreProducto": "Torta Especial de Boda",
+    "precioProducto": 60000,
+    "stockProducto": 2,
+    "descripcionProducto": "Elegante y deliciosa, esta torta está diseñada para ser el centro de atención en cualquier boda."
+  }
+}

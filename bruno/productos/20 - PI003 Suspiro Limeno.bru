@@ -1,0 +1,29 @@
+meta {
+  name: 20 - PI003 Suspiro Limeno
+  type: http
+  seq: 20
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PI003",
+    "imagenProducto": "suspirolimena.png",
+    "categoriaProducto": {
+      "id_categoria": 5
+    },
+    "nombreProducto": "Suspiro Limeño",
+    "precioProducto": 4800,
+    "stockProducto": 17,
+    "descripcionProducto": "Tradicional postre envasado en vasito individual, con una suave base de manjar blanco y coronado con merengue al oporto."
+  }
+}

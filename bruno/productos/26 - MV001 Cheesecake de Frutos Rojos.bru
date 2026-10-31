@@ -1,0 +1,29 @@
+meta {
+  name: 26 - MV001 Cheesecake de Frutos Rojos
+  type: http
+  seq: 26
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV001",
+    "imagenProducto": "cheesecakefrutosrojos.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Cheesecake de Frutos Rojos",
+    "precioProducto": 42000,
+    "stockProducto": 10,
+    "descripcionProducto": "Nuestro clásico cheesecake de textura suave y cremosa, coronado con una generosa capa de salsa artesanal de frambuesas y moras frescas."
+  }
+}

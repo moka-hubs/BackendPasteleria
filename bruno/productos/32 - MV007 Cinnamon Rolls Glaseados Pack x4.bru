@@ -1,0 +1,29 @@
+meta {
+  name: 32 - MV007 Cinnamon Rolls Glaseados Pack x4
+  type: http
+  seq: 32
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV007",
+    "imagenProducto": "cinnamon.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Cinnamon Rolls Glaseados (Pack x4)",
+    "precioProducto": 6990,
+    "stockProducto": 27,
+    "descripcionProducto": "Esponjosos rollitos de canela recién horneados, cubiertos con un dulce y suave glaseado de queso crema que se derrite en la boca."
+  }
+}

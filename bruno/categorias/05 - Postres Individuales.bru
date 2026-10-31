@@ -1,0 +1,21 @@
+meta {
+  name: 05 - Postres Individuales
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/categorias
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "nombre_categoria": "Postres Individuales"
+  }
+}

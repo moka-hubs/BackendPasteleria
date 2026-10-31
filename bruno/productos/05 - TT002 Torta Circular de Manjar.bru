@@ -1,0 +1,29 @@
+meta {
+  name: 05 - TT002 Torta Circular de Manjar
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TT002",
+    "imagenProducto": "tortacircularmanjar.png",
+    "categoriaProducto": {
+      "id_categoria": 4
+    },
+    "nombreProducto": "Torta Circular de Manjar",
+    "precioProducto": 42000,
+    "stockProducto": 7,
+    "descripcionProducto": "Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos."
+  }
+}

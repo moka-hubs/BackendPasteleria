@@ -1,0 +1,29 @@
+meta {
+  name: 08 - PSA001 Torta Sin Azucar de Naranja
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PSA001",
+    "imagenProducto": "tortanaranjasinazucar.png",
+    "categoriaProducto": {
+      "id_categoria": 2
+    },
+    "nombreProducto": "Torta Sin Azúcar de Naranja",
+    "precioProducto": 48000,
+    "stockProducto": 6,
+    "descripcionProducto": "Torta ligera y deliciosa, endulzada naturalmente, ideal para quienes buscan opciones más saludables."
+  }
+}

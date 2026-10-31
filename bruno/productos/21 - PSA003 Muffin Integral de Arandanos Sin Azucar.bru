@@ -1,0 +1,29 @@
+meta {
+  name: 21 - PSA003 Muffin Integral de Arandanos Sin Azucar
+  type: http
+  seq: 21
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PSA003",
+    "imagenProducto": "muffinsinazucar.png",
+    "categoriaProducto": {
+      "id_categoria": 2
+    },
+    "nombreProducto": "Muffin Integral de Arándanos Sin Azúcar",
+    "precioProducto": 2500,
+    "stockProducto": 35,
+    "descripcionProducto": "Esponjoso muffin horneado con harina integral y endulzado con tagatosa, repleto de arándanos frescos."
+  }
+}

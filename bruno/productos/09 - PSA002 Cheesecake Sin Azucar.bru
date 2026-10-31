@@ -1,0 +1,29 @@
+meta {
+  name: 09 - PSA002 Cheesecake Sin Azucar
+  type: http
+  seq: 9
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PSA002",
+    "imagenProducto": "cheesecakesinazucar.png",
+    "categoriaProducto": {
+      "id_categoria": 2
+    },
+    "nombreProducto": "Cheesecake Sin Azúcar",
+    "precioProducto": 47000,
+    "stockProducto": 9,
+    "descripcionProducto": "Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa."
+  }
+}

@@ -1,0 +1,29 @@
+meta {
+  name: 33 - MV008 Torta Red Velvet Clasica
+  type: http
+  seq: 33
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV008",
+    "imagenProducto": "redvelvet.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Torta Red Velvet Clásica",
+    "precioProducto": 49000,
+    "stockProducto": 6,
+    "descripcionProducto": "Elegante bizcocho rojo de cacao suave con sutiles notas de vainilla, intercalado y cubierto con una exquisita crema de queso crema."
+  }
+}

@@ -1,0 +1,29 @@
+meta {
+  name: 06 - PI001 Mousse de Chocolate
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PI001",
+    "imagenProducto": "moussechocolate.png",
+    "categoriaProducto": {
+      "id_categoria": 5
+    },
+    "nombreProducto": "Mousse de Chocolate",
+    "precioProducto": 5000,
+    "stockProducto": 25,
+    "descripcionProducto": "Postre individual cremoso y suave, hecho con chocolate de alta calidad, ideal para los amantes del chocolate."
+  }
+}

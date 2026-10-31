@@ -1,0 +1,29 @@
+meta {
+  name: 14 - PV001 Torta Vegana de Chocolate
+  type: http
+  seq: 14
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PV001",
+    "imagenProducto": "tortaveganachocolate.png",
+    "categoriaProducto": {
+      "id_categoria": 8
+    },
+    "nombreProducto": "Torta Vegana de Chocolate",
+    "precioProducto": 50000,
+    "stockProducto": 5,
+    "descripcionProducto": "Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos."
+  }
+}
