@@ -33,14 +33,14 @@ public class CategoriaController {
     }
 
     //Actualizar Categoria
-    @PutMapping("/{codigo}")
+    @PutMapping("/{idCategoria}")
     public Categoria actualizarCategoria (@PathVariable Integer idCategoria, @RequestBody Categoria categoria){
         categoria.setId_categoria(idCategoria);
         return categoriaService.actualizarCategoria(idCategoria,categoria);
     }
 
     //Eliminar Categoria
-    @DeleteMapping("/{codigo}")
+    @DeleteMapping("/{idCategoria}")
     public void eliminarCategoria (@PathVariable Integer idCategoria){
         categoriaService.eliminarCategoria(idCategoria);
     }
