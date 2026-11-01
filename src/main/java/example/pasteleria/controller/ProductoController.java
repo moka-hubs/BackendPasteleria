@@ -1,8 +1,10 @@
 package example.pasteleria.controller;
 
 
+import example.pasteleria.dto.ProductoRequest;
 import example.pasteleria.model.Producto;
 import example.pasteleria.service.ProductoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,19 +46,14 @@ public class ProductoController {
 
     //Agregar Producto 
     @PostMapping("")
-    public Producto agregarProducto (@RequestBody Producto producto){
-        return productoService.guardaProducto(producto);
+    public Producto agregarProducto (@Valid @RequestBody ProductoRequest productoRequest){
+        return productoService.guardarProducto(productoRequest);
     }
 
     //Actualizar Producto 
     @PutMapping("/{codigo}")
-    public Producto actualizarProducto(@PathVariable String codigo ,@RequestBody Producto producto ){
-        producto.setCodProducto(codigo);
-        return productoService.actualizarProducto(codigo, producto);
+    public Producto actualizarProducto(@PathVariable String codigo ,@Valid @RequestBody ProductoRequest productoRequest ){
+        return productoService.actualizarProducto(codigo, productoRequest);
     }
-
-    
-    
-    
 
 }
