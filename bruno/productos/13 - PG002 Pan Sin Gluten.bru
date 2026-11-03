@@ -1,0 +1,29 @@
+meta {
+  name: 13 - PG002 Pan Sin Gluten
+  type: http
+  seq: 13
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PG002",
+    "imagenProducto": "pansingluten.png",
+    "categoriaProducto": {
+      "id_categoria": 7
+    },
+    "nombreProducto": "Pan Sin Gluten",
+    "precioProducto": 3500,
+    "stockProducto": 20,
+    "descripcionProducto": "Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida."
+  }
+}

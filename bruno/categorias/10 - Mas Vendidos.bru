@@ -1,0 +1,21 @@
+meta {
+  name: 10 - Mas Vendidos
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8080/categorias
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "nombre_categoria": "Más Vendidos"
+  }
+}

@@ -1,0 +1,29 @@
+meta {
+  name: 30 - MV005 Caja de 6 Alfajores Artesanales
+  type: http
+  seq: 30
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV005",
+    "imagenProducto": "cajaalfajor.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Caja de 6 Alfajores Artesanales",
+    "precioProducto": 7500,
+    "stockProducto": 33,
+    "descripcionProducto": "Exquisitos alfajores rellenos con abundante manjar casero, bañados en cobertura de chocolate bitter y con bordes de coco tostado."
+  }
+}

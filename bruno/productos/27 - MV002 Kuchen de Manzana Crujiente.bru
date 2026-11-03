@@ -1,0 +1,29 @@
+meta {
+  name: 27 - MV002 Kuchen de Manzana Crujiente
+  type: http
+  seq: 27
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV002",
+    "imagenProducto": "kuchenmanzana.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Kuchen de Manzana Crujiente",
+    "precioProducto": 28900,
+    "stockProducto": 19,
+    "descripcionProducto": "Receta tradicional de la zona sur, con finas láminas de manzana acarameladas sobre una masa suave y cubierta de migas crujientes."
+  }
+}

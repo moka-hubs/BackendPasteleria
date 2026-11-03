@@ -1,0 +1,21 @@
+meta {
+  name: 04 - Tortas Circulares
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/categorias
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "nombre_categoria": "Tortas Circulares"
+  }
+}

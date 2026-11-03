@@ -1,0 +1,29 @@
+meta {
+  name: 01 - TC001 Torta Cuadrada de Chocolate
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TC001",
+    "imagenProducto": "tortacuadradachocolate.png",
+    "categoriaProducto": {
+      "id_categoria": 3
+    },
+    "nombreProducto": "Torta Cuadrada de Chocolate",
+    "precioProducto": 45000,
+    "stockProducto": 8,
+    "descripcionProducto": "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas personalizable con mensajes especiales."
+  }
+}

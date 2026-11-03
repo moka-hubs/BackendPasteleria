@@ -1,0 +1,29 @@
+meta {
+  name: 04 - TT001 Torta Circular de Vainilla
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TT001",
+    "imagenProducto": "tortacircularvainilla.png",
+    "categoriaProducto": {
+      "id_categoria": 4
+    },
+    "nombreProducto": "Torta Circular de Vainilla",
+    "precioProducto": 40000,
+    "stockProducto": 10,
+    "descripcionProducto": "Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión."
+  }
+}

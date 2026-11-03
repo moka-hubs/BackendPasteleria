@@ -1,0 +1,29 @@
+meta {
+  name: 02 - TC002 Torta Cuadrada de Frutas
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TC002",
+    "imagenProducto": "tortacuadradafrutas.png",
+    "categoriaProducto": {
+      "id_categoria": 3
+    },
+    "nombreProducto": "Torta Cuadrada de Frutas",
+    "precioProducto": 50000,
+    "stockProducto": 12,
+    "descripcionProducto": "Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones."
+  }
+}

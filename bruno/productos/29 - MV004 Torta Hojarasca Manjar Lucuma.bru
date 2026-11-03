@@ -1,0 +1,29 @@
+meta {
+  name: 29 - MV004 Torta Hojarasca Manjar Lucuma
+  type: http
+  seq: 29
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV004",
+    "imagenProducto": "tortamanjarlucuma.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Torta Hojarasca Manjar Lúcuma",
+    "precioProducto": 44000,
+    "stockProducto": 8,
+    "descripcionProducto": "Una de las favoritas de la casa: capas ultrafinas y crujientes de hojarasca rellenas de manjar de leche condensada y crema ligera de lúcuma."
+  }
+}

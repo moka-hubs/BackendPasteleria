@@ -1,0 +1,29 @@
+meta {
+  name: 10 - PT001 Empanada de Manzana
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PT001",
+    "imagenProducto": "empanadamanzana.png",
+    "categoriaProducto": {
+      "id_categoria": 6
+    },
+    "nombreProducto": "Empanada de Manzana",
+    "precioProducto": 3000,
+    "stockProducto": 40,
+    "descripcionProducto": "Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda."
+  }
+}

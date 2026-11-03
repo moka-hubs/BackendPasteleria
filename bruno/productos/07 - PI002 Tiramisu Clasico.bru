@@ -1,0 +1,29 @@
+meta {
+  name: 07 - PI002 Tiramisu Clasico
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PI002",
+    "imagenProducto": "tiramisu.png",
+    "categoriaProducto": {
+      "id_categoria": 5
+    },
+    "nombreProducto": "Tiramisú Clásico",
+    "precioProducto": 5500,
+    "stockProducto": 18,
+    "descripcionProducto": "Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida."
+  }
+}

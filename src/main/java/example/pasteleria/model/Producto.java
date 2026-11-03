@@ -1,6 +1,5 @@
 package example.pasteleria.model;
 
-import javax.swing.ImageIcon;
 
 import jakarta.persistence.*;
 import lombok.Data;

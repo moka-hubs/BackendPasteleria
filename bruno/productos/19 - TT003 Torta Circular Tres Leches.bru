@@ -1,0 +1,29 @@
+meta {
+  name: 19 - TT003 Torta Circular Tres Leches
+  type: http
+  seq: 19
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TT003",
+    "imagenProducto": "tortacirculartresleches.png",
+    "categoriaProducto": {
+      "id_categoria": 4
+    },
+    "nombreProducto": "Torta Circular Tres Leches",
+    "precioProducto": 38990,
+    "stockProducto": 13,
+    "descripcionProducto": "Clásico bizcocho empapado en nuestra mezcla especial de tres leches, cubierto con un delicado merengue italiano."
+  }
+}

@@ -1,0 +1,29 @@
+meta {
+  name: 23 - PG003 Alfajor Artesanal Sin Gluten
+  type: http
+  seq: 23
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PG003",
+    "imagenProducto": "alfajorsingluten.png",
+    "categoriaProducto": {
+      "id_categoria": 7
+    },
+    "nombreProducto": "Alfajor Artesanal Sin Gluten",
+    "precioProducto": 2200,
+    "stockProducto": 45,
+    "descripcionProducto": "Delicadas tapitas crujientes libres de gluten unidas por un generoso relleno de manjar y sutilmente bañadas en chocolate."
+  }
+}

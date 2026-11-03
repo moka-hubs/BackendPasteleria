@@ -1,0 +1,29 @@
+meta {
+  name: 22 - PT003 Kuchen Aleman de Frambuesa
+  type: http
+  seq: 22
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "PT003",
+    "imagenProducto": "kuchenframbuesa.png",
+    "categoriaProducto": {
+      "id_categoria": 6
+    },
+    "nombreProducto": "Kuchen Alemán de Frambuesa",
+    "precioProducto": 2990,
+    "stockProducto": 14,
+    "descripcionProducto": "Tradicional pastel de repostería sureña con una base de masa noble, relleno de jugosas frambuesas y un toque de migas crujientes."
+  }
+}

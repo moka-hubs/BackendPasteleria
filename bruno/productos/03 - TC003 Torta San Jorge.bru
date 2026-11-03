@@ -1,0 +1,29 @@
+meta {
+  name: 03 - TC003 Torta San Jorge
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TC003",
+    "imagenProducto": "tortasanjorge.png",
+    "categoriaProducto": {
+      "id_categoria": 3
+    },
+    "nombreProducto": "Torta San Jorge",
+    "precioProducto": 27990,
+    "stockProducto": 15,
+    "descripcionProducto": "Postre tradicional chileno que destaca por su perfecta combinación de texturas, masa de hojarasca con manjar y lúcuma."
+  }
+}

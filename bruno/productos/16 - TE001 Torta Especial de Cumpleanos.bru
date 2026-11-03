@@ -1,0 +1,29 @@
+meta {
+  name: 16 - TE001 Torta Especial de Cumpleanos
+  type: http
+  seq: 16
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TE001",
+    "imagenProducto": "tortacumple.png",
+    "categoriaProducto": {
+      "id_categoria": 9
+    },
+    "nombreProducto": "Torta Especial de Cumpleaños",
+    "precioProducto": 55000,
+    "stockProducto": 4,
+    "descripcionProducto": "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos."
+  }
+}

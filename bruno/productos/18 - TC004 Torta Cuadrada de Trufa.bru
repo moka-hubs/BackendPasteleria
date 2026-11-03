@@ -1,0 +1,29 @@
+meta {
+  name: 18 - TC004 Torta Cuadrada de Trufa
+  type: http
+  seq: 18
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "TC004",
+    "imagenProducto": "tortatrufa.png",
+    "categoriaProducto": {
+      "id_categoria": 3
+    },
+    "nombreProducto": "Torta Cuadrada de Trufa",
+    "precioProducto": 46990,
+    "stockProducto": 11,
+    "descripcionProducto": "Intensa torta cuadrada con un suave bizcocho de chocolate relleno de abundante trufa artesanal y finas notas de cacao."
+  }
+}

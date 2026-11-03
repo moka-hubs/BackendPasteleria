@@ -1,0 +1,29 @@
+meta {
+  name: 31 - MV006 Pie de Limon con Merengue
+  type: http
+  seq: 31
+}
+
+post {
+  url: http://localhost:8080/productos
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "codProducto": "MV006",
+    "imagenProducto": "pielimon.png",
+    "categoriaProducto": {
+      "id_categoria": 10
+    },
+    "nombreProducto": "Pie de Limón Con Merengue",
+    "precioProducto": 26000,
+    "stockProducto": 12,
+    "descripcionProducto": "Crocante masa de tarta con una crema de limón fresca y equilibrada, coronada con copitos de merengue italiano ligeramente dorado."
+  }
+}

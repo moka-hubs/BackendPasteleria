@@ -4,7 +4,6 @@ package example.pasteleria.controller;
 import example.pasteleria.model.Categoria;
 import example.pasteleria.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,14 +33,14 @@ public class CategoriaController {
     }
 
     //Actualizar Categoria
-    @PutMapping("/{codigo}")
+    @PutMapping("/{idCategoria}")
     public Categoria actualizarCategoria (@PathVariable Integer idCategoria, @RequestBody Categoria categoria){
         categoria.setId_categoria(idCategoria);
         return categoriaService.actualizarCategoria(idCategoria,categoria);
     }
 
     //Eliminar Categoria
-    @DeleteMapping("/{codigo}")
+    @DeleteMapping("/{idCategoria}")
     public void eliminarCategoria (@PathVariable Integer idCategoria){
         categoriaService.eliminarCategoria(idCategoria);
     }
