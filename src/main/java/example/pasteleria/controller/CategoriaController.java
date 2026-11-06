@@ -1,8 +1,10 @@
 package example.pasteleria.controller;
 
 
+import example.pasteleria.dto.CategoriaRequest;
 import example.pasteleria.model.Categoria;
 import example.pasteleria.service.CategoriaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,15 +30,14 @@ public class CategoriaController {
 
     //Buscar por id
     @GetMapping("/{idCategoria}")
-    public Categoria buscarPorCodigo(@PathVariable Integer idCategoria){
+    public Categoria buscarPorId(@PathVariable Integer idCategoria){
         return categoriaService.buscarPorId(idCategoria);
     }
 
     //Actualizar Categoria
     @PutMapping("/{idCategoria}")
-    public Categoria actualizarCategoria (@PathVariable Integer idCategoria, @RequestBody Categoria categoria){
-        categoria.setId_categoria(idCategoria);
-        return categoriaService.actualizarCategoria(idCategoria,categoria);
+    public Categoria actualizarCategoria (@PathVariable Integer idCategoria, @Valid @RequestBody CategoriaRequest categoriaRequest){
+        return categoriaService.actualizarCategoria(idCategoria, categoriaRequest);
     }
 
     //Eliminar Categoria
@@ -47,7 +48,7 @@ public class CategoriaController {
 
     //Agregar Categoria
     @PostMapping
-    public Categoria guardarCategoria (@RequestBody Categoria categoria) {
-        return categoriaService.guardarCategoria(categoria);
+    public Categoria guardarCategoria (@Valid @RequestBody CategoriaRequest categoriaRequest) {
+        return categoriaService.guardarCategoria(categoriaRequest);
     }
 }

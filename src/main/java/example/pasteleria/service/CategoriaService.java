@@ -1,11 +1,14 @@
 package example.pasteleria.service;
 
 
+import example.pasteleria.dto.CategoriaRequest;
 import example.pasteleria.model.Categoria;
 import example.pasteleria.repository.CategoriaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -22,7 +25,9 @@ public class CategoriaService {
 
     //Buscar por id
     public Categoria buscarPorId(Integer idCategoria){
-        return categoriaRepository.findById(idCategoria).get();
+        return categoriaRepository.findById(idCategoria)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Categoria no encontrada: " + idCategoria));
     }
 
     //Eliminar
@@ -32,15 +37,15 @@ public class CategoriaService {
     }
 
     //Guardar
-    public Categoria guardarCategoria (Categoria categoria){
-        return categoriaRepository.save(categoria);
+    public Categoria guardarCategoria (CategoriaRequest request){
+        return categoriaRepository.save(request.toEntity());
     }
 
     //Actualizar
 
-    public Categoria actualizarCategoria (Integer idCategoria, Categoria categoria){
+    public Categoria actualizarCategoria (Integer idCategoria, CategoriaRequest request){
         Categoria categoriaActualizar = buscarPorId(idCategoria);
-        categoriaActualizar.setNombre_categoria(categoria.getNombre_categoria());
+        categoriaActualizar.setNombre_categoria(request.getNombreCategoria());
          return categoriaRepository.save(categoriaActualizar);
     }
 }
