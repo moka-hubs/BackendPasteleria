@@ -27,14 +27,14 @@ public class JwtService {
     }
 
     public String extraerUsername(String token) {
-        return extractAllClaims(token).getSubject();
+        return extraerDatos(token).getSubject();
     }
 
-    public String extractRole(String token) {
-        return extractAllClaims(token).get("rol", String.class);
+    public String extraerRol(String token) {
+        return extraerDatos(token).get("rol", String.class);
     }
 
-    private Claims extractAllClaims(String token) {
+    private Claims extraerDatos(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(KEY)
                 .build()
