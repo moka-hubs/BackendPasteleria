@@ -1,11 +1,11 @@
 package example.pasteleria.service;
 
 import example.pasteleria.enums.Rol;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
+import javax.crypto.spec.SecretKeySpec;
 import java.security.Key;
 import java.util.Date;
 import java.util.Map;
@@ -13,7 +13,10 @@ import java.util.Map;
 @Service
 public class JwtService {
 
-    private static final Key KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    @Value("${jwt.secret}")
+    private String jwtSecret;
+
+    private Key KEY = new SecretKeySpec(jwtSecret.getBytes(), "HmacSHA256");
     private static final long EXPIRATION = 80000000;
 
     public String generarToken(String username, Rol rol) {

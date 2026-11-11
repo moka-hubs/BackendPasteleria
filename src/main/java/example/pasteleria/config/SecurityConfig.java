@@ -1,6 +1,7 @@
 package example.pasteleria.config;
 
 import jakarta.servlet.Filter;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,9 +33,11 @@ public class SecurityConfig {
 
                         .requestMatchers("/api/v1/usuarios/**").authenticated()
 
-                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
-
                         .anyRequest().authenticated()
+                )
+                .exceptionHandling(ex -> ex
+                        .authenticationEntryPoint((request, response, authException) ->
+                                response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 )
                 .addFilterBefore((Filter)jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

@@ -1,5 +1,6 @@
 package example.pasteleria.service;
 
+import example.pasteleria.enums.Rol;
 import example.pasteleria.model.Usuario;
 import example.pasteleria.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class UsuarioService {
 
     //Guardar usuario
     public Usuario guardaUsuario (Usuario usuario){
+        if (usuario.getRol() == null) {
+            usuario.setRol(Rol.CLIENTE);
+        }
         return usuarioRepository.save(usuario);
     }
 

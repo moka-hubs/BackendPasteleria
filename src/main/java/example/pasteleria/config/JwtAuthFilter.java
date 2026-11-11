@@ -4,8 +4,9 @@ import example.pasteleria.service.JwtService;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,15 +17,15 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class JwtAuthFilter {
+public class JwtAuthFilter implements Filter {
 
     private final JwtService jwtService;
 
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filter) throws ServletException, IOException {
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
 
-    protected void filtrarPeticion(HttpServletRequest request, HttpServletResponse response, FilterChain filter)
-            throws ServletException, IOException {
-
-        String authHeader = request.getHeader("Authorization");
+        String authHeader = httpRequest.getHeader("Authorization");
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
@@ -45,5 +46,3 @@ public class JwtAuthFilter {
         filter.doFilter(request, response);
     }
 }
-
-
