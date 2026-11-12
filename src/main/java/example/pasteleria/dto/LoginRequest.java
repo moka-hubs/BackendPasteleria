@@ -1,10 +1,14 @@
 package example.pasteleria.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-@Data 
+@Data
 public class LoginRequest {
-     private String correo;
+
+    @NotBlank(message = "El correo es obligatorio")
+    private String correo;
+
+    @NotBlank(message = "La contrasenia es obligatoria")
     private String password;
-    
 }

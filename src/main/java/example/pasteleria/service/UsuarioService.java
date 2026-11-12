@@ -3,16 +3,18 @@ package example.pasteleria.service;
 import example.pasteleria.enums.Rol;
 import example.pasteleria.model.Usuario;
 import example.pasteleria.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UsuarioService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
+    private final PasswordEncoder passwordEncoder;
 
     //Listar
     public List<Usuario> listarUsuarios(){
@@ -32,6 +34,7 @@ public class UsuarioService {
         if (usuario.getRol() == null) {
             usuario.setRol(Rol.CLIENTE);
         }
+        usuario.setContraseniaUsuario(passwordEncoder.encode(usuario.getContraseniaUsuario()));
         return usuarioRepository.save(usuario);
     }
 
@@ -50,7 +53,9 @@ public class UsuarioService {
         usuarioActualizar.setNombreUsuario(usuario.getNombreUsuario());
         usuarioActualizar.setApellidoUsuario(usuario.getApellidoUsuario());
         usuarioActualizar.setCorreoUsuario(usuario.getCorreoUsuario());
-        usuarioActualizar.setContraseniaUsuario(usuario.getContraseniaUsuario());
+        if (usuario.getContraseniaUsuario() != null && !usuario.getContraseniaUsuario().isBlank()) {
+            usuarioActualizar.setContraseniaUsuario(passwordEncoder.encode(usuario.getContraseniaUsuario()));
+        }
         usuarioActualizar.setFechaNacUsuario(usuario.getFechaNacUsuario());
         usuarioActualizar.setCuponBienvenida(usuario.getCuponBienvenida());
         return usuarioRepository.save(usuarioActualizar);

@@ -13,11 +13,12 @@ import java.util.Map;
 @Service
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    private String jwtSecret;
+    private final Key key;
+    private static final long EXPIRATION = 86_400_000L; // 24 horas
 
-    private Key KEY = new SecretKeySpec(jwtSecret.getBytes(), "HmacSHA256");
-    private static final long EXPIRATION = 80000000;
+    public JwtService(@Value("${jwt.secret}") String jwtSecret) {
+        this.key = new SecretKeySpec(jwtSecret.getBytes(), "HmacSHA256");
+    }
 
     public String generarToken(String username, Rol rol) {
         return Jwts.builder()
@@ -25,7 +26,7 @@ public class JwtService {
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
-                .signWith(KEY)
+                .signWith(key)
                 .compact();
     }
 
@@ -37,9 +38,13 @@ public class JwtService {
         return extraerDatos(token).get("rol", String.class);
     }
 
+    public long getExpiracion() {
+        return EXPIRATION;
+    }
+
     private Claims extraerDatos(String token) {
         return Jwts.parserBuilder()
-                .setSigningKey(KEY)
+                .setSigningKey(key)
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
