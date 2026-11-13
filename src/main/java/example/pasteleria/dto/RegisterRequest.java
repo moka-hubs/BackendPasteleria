@@ -31,4 +31,7 @@ public class RegisterRequest {
     @NotNull(message = "La fecha de nacimiento es obligatoria")
     @Past(message = "La fecha de nacimiento debe ser anterior a hoy")
     private Date fechaNacUsuario;
+
+    @Size(max = 20, message = "El cupon no puede superar los 20 caracteres")
+    private String cuponBienvenida;
 }

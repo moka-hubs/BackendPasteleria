@@ -13,14 +13,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.security.SecureRandom;
-
 @Service
 @RequiredArgsConstructor
 public class AuthService {
 
-    private static final String CARACTERES_CUPON = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    private static final SecureRandom RANDOM = new SecureRandom();
+    private static final String CUPON_BIENVENIDA = "FELICES50";
 
     private final UsuarioRepository usuarioRepository;
     private final JwtService jwtService;
@@ -50,8 +47,7 @@ public class AuthService {
         usuario.setCorreoUsuario(correo);
         usuario.setContraseniaUsuario(passwordEncoder.encode(request.getContraseniaUsuario()));
         usuario.setFechaNacUsuario(request.getFechaNacUsuario());
-        usuario.setCuponBienvenida(generarCuponBienvenida());
-        // El rol nunca viene del cliente: todo registro publico es CLIENTE.
+        usuario.setCuponBienvenida(validarCupon(request.getCuponBienvenida()));
         usuario.setRol(Rol.CLIENTE);
 
         return construirRespuesta(usuarioRepository.save(usuario));
@@ -62,11 +58,11 @@ public class AuthService {
         return new AuthResponse(token, "Bearer", jwtService.getExpiracion());
     }
 
-    private String generarCuponBienvenida() {
-        StringBuilder cupon = new StringBuilder("BIENVENIDO-");
-        for (int i = 0; i < 6; i++) {
-            cupon.append(CARACTERES_CUPON.charAt(RANDOM.nextInt(CARACTERES_CUPON.length())));
+    private String validarCupon(String cupon) {
+        if (cupon == null || cupon.isBlank()) {
+            return null;
         }
-        return cupon.toString();
+        String cuponNormalizado = cupon.trim().toUpperCase();
+        return CUPON_BIENVENIDA.equals(cuponNormalizado) ? CUPON_BIENVENIDA : null;
     }
 }
