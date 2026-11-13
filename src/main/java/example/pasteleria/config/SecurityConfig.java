@@ -34,16 +34,16 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login", "/auth/registro", "/error").permitAll()
+                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/registro", "/error").permitAll()
 
                         // Swagger / OpenAPI
                         .requestMatchers("/doc/**", "/v3/api-docs/**", "/swagger-ui/**", "/webjars/**").permitAll()
 
                         // Catalogo publico: la tienda se ve sin iniciar sesion
-                        .requestMatchers(HttpMethod.GET, "/productos", "/productos/**", "/categorias", "/categorias/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/productos", "/api/v1/productos/**", "/api/v1/categorias", "/api/v1/categorias/**").permitAll()
 
                         // Escritura del catalogo: solo administradores
-                        .requestMatchers("/productos", "/productos/**", "/categorias", "/categorias/**").hasAuthority("ADMIN")
+                        .requestMatchers("/api/v1/productos", "/api/v1/productos/**", "/api/v1/categorias", "/api/v1/categorias/**").hasAuthority("ADMIN")
 
                         // CRUD de usuarios: solo administradores
                         .requestMatchers("/api/v1/usuarios", "/api/v1/usuarios/**").hasAuthority("ADMIN")
