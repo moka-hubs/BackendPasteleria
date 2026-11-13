@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.config.Customizer;
@@ -37,6 +38,12 @@ public class SecurityConfig {
 
                         // Swagger / OpenAPI
                         .requestMatchers("/doc/**", "/v3/api-docs/**", "/swagger-ui/**", "/webjars/**").permitAll()
+
+                        // Catalogo publico: la tienda se ve sin iniciar sesion
+                        .requestMatchers(HttpMethod.GET, "/productos", "/productos/**", "/categorias", "/categorias/**").permitAll()
+
+                        // Escritura del catalogo: solo administradores
+                        .requestMatchers("/productos", "/productos/**", "/categorias", "/categorias/**").hasAuthority("ADMIN")
 
                         // CRUD de usuarios: solo administradores
                         .requestMatchers("/api/v1/usuarios", "/api/v1/usuarios/**").hasAuthority("ADMIN")
