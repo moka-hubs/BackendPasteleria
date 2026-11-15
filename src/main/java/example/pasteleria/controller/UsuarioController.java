@@ -1,7 +1,6 @@
 package example.pasteleria.controller;
 
 import example.pasteleria.model.Usuario;
-import example.pasteleria.model.Usuario;
 import example.pasteleria.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

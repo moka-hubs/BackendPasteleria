@@ -1,6 +1,7 @@
 package example.pasteleria.model;
 
 import example.pasteleria.enums.Rol;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,6 +24,7 @@ public class Usuario {
     @Column(nullable = false)
     private String correoUsuario;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     private String contraseniaUsuario;
 

@@ -4,8 +4,10 @@ import example.pasteleria.enums.Rol;
 import example.pasteleria.model.Usuario;
 import example.pasteleria.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -24,8 +26,9 @@ public class UsuarioService {
 
     //Buscar Por Id
     public Usuario buscarUsuarioPorId (Long id){
-        return usuarioRepository.getReferenceById(id);
-
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Usuario no encontrado: " + id));
     }
 
 

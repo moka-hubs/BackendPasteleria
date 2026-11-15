@@ -2,7 +2,6 @@ package example.pasteleria.service;
 
 import example.pasteleria.dto.AuthResponse;
 import example.pasteleria.dto.LoginRequest;
-import example.pasteleria.dto.RecuperarPasswordRequest;
 import example.pasteleria.dto.RegisterRequest;
 import example.pasteleria.enums.Rol;
 import example.pasteleria.model.Usuario;
@@ -65,15 +64,5 @@ public class AuthService {
         }
         String cuponNormalizado = cupon.trim().toUpperCase();
         return CUPON_BIENVENIDA.equals(cuponNormalizado) ? CUPON_BIENVENIDA : null;
-    }
-
-    public boolean cambiarPassword(RecuperarPasswordRequest request) {
-        return usuarioRepository.findByCorreoUsuario(request.getCorreo())
-                .map(usuario -> {
-                    usuario.setContraseniaUsuario(request.getNuevaPassword());
-                    usuarioRepository.save(usuario);
-                    return true;
-                })
-                .orElse(false);
     }
 }
