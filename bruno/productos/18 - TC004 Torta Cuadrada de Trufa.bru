@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "TC004",
-    "imagenProducto": "tortatrufa.png",
-    "categoriaProducto": {
-      "id_categoria": 3
-    },
-    "nombreProducto": "Torta Cuadrada de Trufa",
-    "precioProducto": 46990,
-    "stockProducto": 11,
-    "descripcionProducto": "Intensa torta cuadrada con un suave bizcocho de chocolate relleno de abundante trufa artesanal y finas notas de cacao."
+    "codigo": "TC004",
+    "imagen": "tortatrufa.png",
+    "categoria": "Tortas Cuadradas",
+    "nombre": "Torta Cuadrada de Trufa",
+    "precio": 46990,
+    "stock": 11,
+    "descripcion": "Intensa torta cuadrada con un suave bizcocho de chocolate relleno de abundante trufa artesanal y finas notas de cacao."
   }
 }

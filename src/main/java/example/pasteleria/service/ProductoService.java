@@ -11,7 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.text.Normalizer;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class ProductoService {
@@ -38,19 +40,19 @@ public class ProductoService {
 
     //Guardar Producto
     public Producto guardarProducto(ProductoRequest request){
-        if (productoRepository.existsById(request.getCodProducto())) {
+        if (productoRepository.existsById(request.getCodigo())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT,
-                    "Producto ya existe: " + request.getCodProducto());
+                    "Producto ya existe: " + request.getCodigo());
         }
         Categoria categoria = obtenerCategoria(request);
         Producto producto = new Producto();
-        producto.setCodProducto(request.getCodProducto());
-        producto.setImagenProducto(request.getImagenProducto());
-        producto.setCategoriaProducto(categoria);
-        producto.setNombreProducto(request.getNombreProducto());
-        producto.setPrecioProducto(request.getPrecioProducto());
-        producto.setStockProducto(request.getStockProducto());
-        producto.setDescripcionProducto(request.getDescripcionProducto());
+        producto.setCodigo(request.getCodigo());
+        producto.setImagen(request.getImagen());
+        producto.setCategoria(categoria);
+        producto.setNombre(request.getNombre());
+        producto.setPrecio(request.getPrecio());
+        producto.setStock(request.getStock());
+        producto.setDescripcion(request.getDescripcion());
         return productoRepository.save(producto);
     }
 
@@ -67,25 +69,34 @@ public class ProductoService {
     public Producto actualizarProducto (String codigo, ProductoRequest request){
         Producto productoActualizar = buscarPorCodigo(codigo);
         Categoria categoria = obtenerCategoria(request);
-        productoActualizar.setImagenProducto(request.getImagenProducto());
-        productoActualizar.setCategoriaProducto(categoria);
-        productoActualizar.setNombreProducto(request.getNombreProducto());
-        productoActualizar.setPrecioProducto(request.getPrecioProducto());
-        productoActualizar.setStockProducto(request.getStockProducto());
-        productoActualizar.setDescripcionProducto(request.getDescripcionProducto());
+        productoActualizar.setImagen(request.getImagen());
+        productoActualizar.setCategoria(categoria);
+        productoActualizar.setNombre(request.getNombre());
+        productoActualizar.setPrecio(request.getPrecio());
+        productoActualizar.setStock(request.getStock());
+        productoActualizar.setDescripcion(request.getDescripcion());
         return productoRepository.save(productoActualizar);
     }
 
 
     private Categoria obtenerCategoria(ProductoRequest request){
-        if (request.getCategoriaProducto() == null
-                || request.getCategoriaProducto().getId_categoria() == null) {
+        if (request.getCategoria() == null || request.getCategoria().isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "La categoria es obligatoria");
         }
-        return categoriaRepository.findById(request.getCategoriaProducto().getId_categoria())
+        String nombreBuscado = normalizar(request.getCategoria());
+        return categoriaRepository.findAll().stream()
+                .filter(categoria -> normalizar(categoria.getNombre_categoria()).equals(nombreBuscado))
+                .findFirst()
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
                         "La categoria no existe"));
+    }
+
+    private String normalizar(String texto) {
+        return Normalizer.normalize(texto, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "")
+                .trim()
+                .toLowerCase(Locale.ROOT);
     }
 
 

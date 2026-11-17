@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "TC001",
-    "imagenProducto": "tortacuadradachocolate.png",
-    "categoriaProducto": {
-      "id_categoria": 3
-    },
-    "nombreProducto": "Torta Cuadrada de Chocolate",
-    "precioProducto": 45000,
-    "stockProducto": 8,
-    "descripcionProducto": "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas personalizable con mensajes especiales."
+    "codigo": "TC001",
+    "imagen": "tortacuadradachocolate.png",
+    "categoria": "Tortas Cuadradas",
+    "nombre": "Torta Cuadrada de Chocolate",
+    "precio": 45000,
+    "stock": 8,
+    "descripcion": "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas personalizable con mensajes especiales."
   }
 }

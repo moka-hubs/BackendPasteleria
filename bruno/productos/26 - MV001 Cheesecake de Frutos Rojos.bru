@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "MV001",
-    "imagenProducto": "cheesecakefrutosrojos.png",
-    "categoriaProducto": {
-      "id_categoria": 10
-    },
-    "nombreProducto": "Cheesecake de Frutos Rojos",
-    "precioProducto": 42000,
-    "stockProducto": 10,
-    "descripcionProducto": "Nuestro clásico cheesecake de textura suave y cremosa, coronado con una generosa capa de salsa artesanal de frambuesas y moras frescas."
+    "codigo": "MV001",
+    "imagen": "cheesecakefrutosrojos.png",
+    "categoria": "Más Vendidos",
+    "nombre": "Cheesecake de Frutos Rojos",
+    "precio": 42000,
+    "stock": 10,
+    "descripcion": "Nuestro clásico cheesecake de textura suave y cremosa, coronado con una generosa capa de salsa artesanal de frambuesas y moras frescas."
   }
 }

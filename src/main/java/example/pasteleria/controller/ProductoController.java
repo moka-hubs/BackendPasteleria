@@ -2,7 +2,7 @@ package example.pasteleria.controller;
 
 
 import example.pasteleria.dto.ProductoRequest;
-import example.pasteleria.model.Producto;
+import example.pasteleria.dto.ProductoResponse;
 import example.pasteleria.service.ProductoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,15 +27,15 @@ public class ProductoController {
 
     //Listar Todos
     @GetMapping("")
-    public List<Producto> listarTodoss(){
-        return productoService.listarTodos();
+    public List<ProductoResponse> listarTodoss(){
+        return productoService.listarTodos().stream().map(ProductoResponse::from).toList();
     }
 
 
     //Buscar por codigo
     @GetMapping("/{codigo}")
-     public Producto buscarCorredorPorId(@PathVariable String codigo){
-        return productoService.buscarPorCodigo(codigo);
+     public ProductoResponse buscarCorredorPorId(@PathVariable String codigo){
+        return ProductoResponse.from(productoService.buscarPorCodigo(codigo));
     }
 
     //Eliminar por codigo 
@@ -48,14 +48,14 @@ public class ProductoController {
 
     //Agregar Producto 
     @PostMapping("")
-    public Producto agregarProducto (@Valid @RequestBody ProductoRequest productoRequest){
-        return productoService.guardarProducto(productoRequest);
+    public ProductoResponse agregarProducto (@Valid @RequestBody ProductoRequest productoRequest){
+        return ProductoResponse.from(productoService.guardarProducto(productoRequest));
     }
 
     //Actualizar Producto 
     @PutMapping("/{codigo}")
-    public Producto actualizarProducto(@PathVariable String codigo ,@Valid @RequestBody ProductoRequest productoRequest ){
-        return productoService.actualizarProducto(codigo, productoRequest);
+    public ProductoResponse actualizarProducto(@PathVariable String codigo ,@Valid @RequestBody ProductoRequest productoRequest ){
+        return ProductoResponse.from(productoService.actualizarProducto(codigo, productoRequest));
     }
 
 }

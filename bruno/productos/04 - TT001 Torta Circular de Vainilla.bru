@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "TT001",
-    "imagenProducto": "tortacircularvainilla.png",
-    "categoriaProducto": {
-      "id_categoria": 4
-    },
-    "nombreProducto": "Torta Circular de Vainilla",
-    "precioProducto": 40000,
-    "stockProducto": 10,
-    "descripcionProducto": "Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión."
+    "codigo": "TT001",
+    "imagen": "tortacircularvainilla.png",
+    "categoria": "Tortas Circulares",
+    "nombre": "Torta Circular de Vainilla",
+    "precio": 40000,
+    "stock": 10,
+    "descripcion": "Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión."
   }
 }

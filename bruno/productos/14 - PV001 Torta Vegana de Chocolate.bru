@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PV001",
-    "imagenProducto": "tortaveganachocolate.png",
-    "categoriaProducto": {
-      "id_categoria": 8
-    },
-    "nombreProducto": "Torta Vegana de Chocolate",
-    "precioProducto": 50000,
-    "stockProducto": 5,
-    "descripcionProducto": "Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos."
+    "codigo": "PV001",
+    "imagen": "tortaveganachocolate.png",
+    "categoria": "Productos Veganos",
+    "nombre": "Torta Vegana de Chocolate",
+    "precio": 50000,
+    "stock": 5,
+    "descripcion": "Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos."
   }
 }

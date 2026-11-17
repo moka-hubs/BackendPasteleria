@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PI002",
-    "imagenProducto": "tiramisu.png",
-    "categoriaProducto": {
-      "id_categoria": 5
-    },
-    "nombreProducto": "Tiramisú Clásico",
-    "precioProducto": 5500,
-    "stockProducto": 18,
-    "descripcionProducto": "Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida."
+    "codigo": "PI002",
+    "imagen": "tiramisu.png",
+    "categoria": "Postres Individuales",
+    "nombre": "Tiramisú Clásico",
+    "precio": 5500,
+    "stock": 18,
+    "descripcion": "Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida."
   }
 }

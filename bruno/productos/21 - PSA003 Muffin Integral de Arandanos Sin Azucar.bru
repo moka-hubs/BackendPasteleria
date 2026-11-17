@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PSA003",
-    "imagenProducto": "muffinsinazucar.png",
-    "categoriaProducto": {
-      "id_categoria": 2
-    },
-    "nombreProducto": "Muffin Integral de Arándanos Sin Azúcar",
-    "precioProducto": 2500,
-    "stockProducto": 35,
-    "descripcionProducto": "Esponjoso muffin horneado con harina integral y endulzado con tagatosa, repleto de arándanos frescos."
+    "codigo": "PSA003",
+    "imagen": "muffinsinazucar.png",
+    "categoria": "Productos Sin Azúcar",
+    "nombre": "Muffin Integral de Arándanos Sin Azúcar",
+    "precio": 2500,
+    "stock": 35,
+    "descripcion": "Esponjoso muffin horneado con harina integral y endulzado con tagatosa, repleto de arándanos frescos."
   }
 }

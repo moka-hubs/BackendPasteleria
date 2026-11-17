@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PT003",
-    "imagenProducto": "kuchenframbuesa.png",
-    "categoriaProducto": {
-      "id_categoria": 6
-    },
-    "nombreProducto": "Kuchen Alemán de Frambuesa",
-    "precioProducto": 2990,
-    "stockProducto": 14,
-    "descripcionProducto": "Tradicional pastel de repostería sureña con una base de masa noble, relleno de jugosas frambuesas y un toque de migas crujientes."
+    "codigo": "PT003",
+    "imagen": "kuchenframbuesa.png",
+    "categoria": "Pastelería Tradicional",
+    "nombre": "Kuchen Alemán de Frambuesa",
+    "precio": 2990,
+    "stock": 14,
+    "descripcion": "Tradicional pastel de repostería sureña con una base de masa noble, relleno de jugosas frambuesas y un toque de migas crujientes."
   }
 }

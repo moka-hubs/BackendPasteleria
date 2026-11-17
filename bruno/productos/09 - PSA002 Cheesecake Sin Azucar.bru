@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PSA002",
-    "imagenProducto": "cheesecakesinazucar.png",
-    "categoriaProducto": {
-      "id_categoria": 2
-    },
-    "nombreProducto": "Cheesecake Sin Azúcar",
-    "precioProducto": 47000,
-    "stockProducto": 9,
-    "descripcionProducto": "Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa."
+    "codigo": "PSA002",
+    "imagen": "cheesecakesinazucar.png",
+    "categoria": "Productos Sin Azúcar",
+    "nombre": "Cheesecake Sin Azúcar",
+    "precio": 47000,
+    "stock": 9,
+    "descripcion": "Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa."
   }
 }

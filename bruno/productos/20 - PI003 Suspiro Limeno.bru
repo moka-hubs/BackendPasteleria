@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PI003",
-    "imagenProducto": "suspirolimena.png",
-    "categoriaProducto": {
-      "id_categoria": 5
-    },
-    "nombreProducto": "Suspiro Limeño",
-    "precioProducto": 4800,
-    "stockProducto": 17,
-    "descripcionProducto": "Tradicional postre envasado en vasito individual, con una suave base de manjar blanco y coronado con merengue al oporto."
+    "codigo": "PI003",
+    "imagen": "suspirolimena.png",
+    "categoria": "Postres Individuales",
+    "nombre": "Suspiro Limeño",
+    "precio": 4800,
+    "stock": 17,
+    "descripcion": "Tradicional postre envasado en vasito individual, con una suave base de manjar blanco y coronado con merengue al oporto."
   }
 }

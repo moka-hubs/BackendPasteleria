@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PG001",
-    "imagenProducto": "browniesingluten.png",
-    "categoriaProducto": {
-      "id_categoria": 7
-    },
-    "nombreProducto": "Brownie Sin Gluten",
-    "precioProducto": 4000,
-    "stockProducto": 30,
-    "descripcionProducto": "Rico y denso, este brownie es perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor."
+    "codigo": "PG001",
+    "imagen": "browniesingluten.png",
+    "categoria": "Productos Sin Gluten",
+    "nombre": "Brownie Sin Gluten",
+    "precio": 4000,
+    "stock": 30,
+    "descripcion": "Rico y denso, este brownie es perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor."
   }
 }

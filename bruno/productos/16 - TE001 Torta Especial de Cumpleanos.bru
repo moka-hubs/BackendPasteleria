@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "TE001",
-    "imagenProducto": "tortacumple.png",
-    "categoriaProducto": {
-      "id_categoria": 9
-    },
-    "nombreProducto": "Torta Especial de Cumpleaños",
-    "precioProducto": 55000,
-    "stockProducto": 4,
-    "descripcionProducto": "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos."
+    "codigo": "TE001",
+    "imagen": "tortacumple.png",
+    "categoria": "Tortas Especiales",
+    "nombre": "Torta Especial de Cumpleaños",
+    "precio": 55000,
+    "stock": 4,
+    "descripcion": "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos."
   }
 }

@@ -12,27 +12,27 @@ public class Producto {
 
     @Id
     @Column(nullable = false)
-    private String codProducto;
+    private String codigo;
 
     @Column (nullable = false)
-    private String imagenProducto;
+    private String imagen;
 
     @ManyToOne
     @JoinColumn (name = "id_categoria" , nullable = false)
-    private Categoria categoriaProducto;
+    private Categoria categoria;
 
     @Column (nullable = false)
-    private String nombreProducto;
+    private String nombre;
 
 
     @Column (nullable = false)
-    private Integer precioProducto;
+    private Integer precio;
 
     @Column (nullable = false)
-    private Integer stockProducto;
+    private Integer stock;
 
     @Column (nullable = false)
-    private String descripcionProducto;
+    private String descripcion;
 
 
 

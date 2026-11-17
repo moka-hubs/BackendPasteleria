@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PT001",
-    "imagenProducto": "empanadamanzana.png",
-    "categoriaProducto": {
-      "id_categoria": 6
-    },
-    "nombreProducto": "Empanada de Manzana",
-    "precioProducto": 3000,
-    "stockProducto": 40,
-    "descripcionProducto": "Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda."
+    "codigo": "PT001",
+    "imagen": "empanadamanzana.png",
+    "categoria": "Pastelería Tradicional",
+    "nombre": "Empanada de Manzana",
+    "precio": 3000,
+    "stock": 40,
+    "descripcion": "Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda."
   }
 }

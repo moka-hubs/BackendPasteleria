@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PV003",
-    "imagenProducto": "quequeganachevegano.png",
-    "categoriaProducto": {
-      "id_categoria": 8
-    },
-    "nombreProducto": "Queque Rústico de Plátano y Nuez Vegano",
-    "precioProducto": 3500,
-    "stockProducto": 16,
-    "descripcionProducto": "Queque húmedo y aromático elaborado 100% con ingredientes vegetales, plátanos maduros seleccionados y trozos de nueces."
+    "codigo": "PV003",
+    "imagen": "quequeganachevegano.png",
+    "categoria": "Productos Veganos",
+    "nombre": "Queque Rústico de Plátano y Nuez Vegano",
+    "precio": 3500,
+    "stock": 16,
+    "descripcion": "Queque húmedo y aromático elaborado 100% con ingredientes vegetales, plátanos maduros seleccionados y trozos de nueces."
   }
 }

@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "MV006",
-    "imagenProducto": "pielimon.png",
-    "categoriaProducto": {
-      "id_categoria": 10
-    },
-    "nombreProducto": "Pie de Limón Con Merengue",
-    "precioProducto": 26000,
-    "stockProducto": 12,
-    "descripcionProducto": "Crocante masa de tarta con una crema de limón fresca y equilibrada, coronada con copitos de merengue italiano ligeramente dorado."
+    "codigo": "MV006",
+    "imagen": "pielimon.png",
+    "categoria": "Más Vendidos",
+    "nombre": "Pie de Limón Con Merengue",
+    "precio": 26000,
+    "stock": 12,
+    "descripcion": "Crocante masa de tarta con una crema de limón fresca y equilibrada, coronada con copitos de merengue italiano ligeramente dorado."
   }
 }

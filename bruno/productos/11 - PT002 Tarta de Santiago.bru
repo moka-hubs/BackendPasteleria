@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PT002",
-    "imagenProducto": "tartasantiago.png",
-    "categoriaProducto": {
-      "id_categoria": 6
-    },
-    "nombreProducto": "Tarta de Santiago",
-    "precioProducto": 6000,
-    "stockProducto": 22,
-    "descripcionProducto": "Tradicional tarta española hecha con almendras, azúcar, y huevos, una delicia para los amantes de los postres clásicos."
+    "codigo": "PT002",
+    "imagen": "tartasantiago.png",
+    "categoria": "Pastelería Tradicional",
+    "nombre": "Tarta de Santiago",
+    "precio": 6000,
+    "stock": 22,
+    "descripcion": "Tradicional tarta española hecha con almendras, azúcar, y huevos, una delicia para los amantes de los postres clásicos."
   }
 }

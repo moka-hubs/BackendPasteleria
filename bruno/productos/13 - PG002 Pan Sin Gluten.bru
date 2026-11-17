@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PG002",
-    "imagenProducto": "pansingluten.png",
-    "categoriaProducto": {
-      "id_categoria": 7
-    },
-    "nombreProducto": "Pan Sin Gluten",
-    "precioProducto": 3500,
-    "stockProducto": 20,
-    "descripcionProducto": "Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida."
+    "codigo": "PG002",
+    "imagen": "pansingluten.png",
+    "categoria": "Productos Sin Gluten",
+    "nombre": "Pan Sin Gluten",
+    "precio": 3500,
+    "stock": 20,
+    "descripcion": "Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida."
   }
 }

@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "MV003",
-    "imagenProducto": "volcan.png",
-    "categoriaProducto": {
-      "id_categoria": 10
-    },
-    "nombreProducto": "Volcán de Chocolate Belga",
-    "precioProducto": 6500,
-    "stockProducto": 24,
-    "descripcionProducto": "Delicioso pastelito individual de chocolate con un núcleo fundente y cálido que se desborda al primer corte. Ideal para acompañar con helado."
+    "codigo": "MV003",
+    "imagen": "volcan.png",
+    "categoria": "Más Vendidos",
+    "nombre": "Volcán de Chocolate Belga",
+    "precio": 6500,
+    "stock": 24,
+    "descripcion": "Delicioso pastelito individual de chocolate con un núcleo fundente y cálido que se desborda al primer corte. Ideal para acompañar con helado."
   }
 }

@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "TC002",
-    "imagenProducto": "tortacuadradafrutas.png",
-    "categoriaProducto": {
-      "id_categoria": 3
-    },
-    "nombreProducto": "Torta Cuadrada de Frutas",
-    "precioProducto": 50000,
-    "stockProducto": 12,
-    "descripcionProducto": "Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones."
+    "codigo": "TC002",
+    "imagen": "tortacuadradafrutas.png",
+    "categoria": "Tortas Cuadradas",
+    "nombre": "Torta Cuadrada de Frutas",
+    "precio": 50000,
+    "stock": 12,
+    "descripcion": "Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones."
   }
 }

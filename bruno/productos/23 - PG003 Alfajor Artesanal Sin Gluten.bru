@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "PG003",
-    "imagenProducto": "alfajorsingluten.png",
-    "categoriaProducto": {
-      "id_categoria": 7
-    },
-    "nombreProducto": "Alfajor Artesanal Sin Gluten",
-    "precioProducto": 2200,
-    "stockProducto": 45,
-    "descripcionProducto": "Delicadas tapitas crujientes libres de gluten unidas por un generoso relleno de manjar y sutilmente bañadas en chocolate."
+    "codigo": "PG003",
+    "imagen": "alfajorsingluten.png",
+    "categoria": "Productos Sin Gluten",
+    "nombre": "Alfajor Artesanal Sin Gluten",
+    "precio": 2200,
+    "stock": 45,
+    "descripcion": "Delicadas tapitas crujientes libres de gluten unidas por un generoso relleno de manjar y sutilmente bañadas en chocolate."
   }
 }

@@ -12,18 +12,17 @@ post {
 
 headers {
   content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQHBhc3RlbGVyaWEuY29tIiwiaWF0IjoxNzk0OTI2OTA0LCJleHAiOjE3OTUwMTMzMDR9.iScCaEBD-O9sGElD9b_4Ue4DYL9unkeRC0LI8Cb1E3Y
 }
 
 body:json {
   {
-    "codProducto": "TT002",
-    "imagenProducto": "tortacircularmanjar.png",
-    "categoriaProducto": {
-      "id_categoria": 4
-    },
-    "nombreProducto": "Torta Circular de Manjar",
-    "precioProducto": 42000,
-    "stockProducto": 7,
-    "descripcionProducto": "Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos."
+    "codigo": "TT002",
+    "imagen": "tortacircularmanjar.png",
+    "categoria": "Tortas Circulares",
+    "nombre": "Torta Circular de Manjar",
+    "precio": 42000,
+    "stock": 7,
+    "descripcion": "Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos."
   }
 }
