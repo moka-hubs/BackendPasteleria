@@ -34,6 +34,9 @@ public class UsuarioService {
 
     //Guardar usuario
     public Usuario guardaUsuario (Usuario usuario){
+        if (usuario.getContraseniaUsuario() == null || usuario.getContraseniaUsuario().isBlank()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La contraseña es obligatoria");
+        }
         if (usuario.getRol() == null) {
             usuario.setRol(Rol.CLIENTE);
         }

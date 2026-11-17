@@ -3,7 +3,9 @@ package example.pasteleria.controller;
 import example.pasteleria.model.Usuario;
 import example.pasteleria.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 
@@ -40,6 +42,7 @@ public class UsuarioController {
 
     //Agregar Usuario
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Usuario guardarUsuario (@RequestBody Usuario usuario) {
         return usuarioService.guardaUsuario(usuario);
     }
