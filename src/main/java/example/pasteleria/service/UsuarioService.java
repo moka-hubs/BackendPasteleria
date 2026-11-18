@@ -69,4 +69,11 @@ public class UsuarioService {
 
 
 
+
+    /*METODOS NECESARIOS PARA LA VISTA DEL PERFIL DE USUARIO */
+    
+    public Usuario obtenerPerfil(){
+        
+    }
+
 }
