@@ -48,6 +48,9 @@ public class SecurityConfig {
                         // CRUD de usuarios: solo administradores
                         .requestMatchers("/api/v1/usuarios", "/api/v1/usuarios/**").hasAuthority("ADMIN")
 
+                        //GET y PUT en perfil solo autenticado
+                        .requestMatchers("/api/v1/perfil", "/api/v1/perfil/**").authenticated()
+
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(ex -> ex
