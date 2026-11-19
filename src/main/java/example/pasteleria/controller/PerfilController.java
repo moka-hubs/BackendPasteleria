@@ -29,7 +29,7 @@ public class PerfilController {
         this.perfilService = perfilService;
     }
     
-    @GetMapping("path")
+    @GetMapping("")
     public PerfilResponse obtenerPerfil(Authentication a){
         return perfilService.obtenerPerfil(a.getName());
     }
