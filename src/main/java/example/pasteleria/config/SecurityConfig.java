@@ -51,6 +51,9 @@ public class SecurityConfig {
                         //GET y PUT en perfil solo autenticado
                         .requestMatchers("/api/v1/perfil", "/api/v1/perfil/**").authenticated()
 
+                        // Finalizar compra: cualquier usuario autenticado (cliente o admin)
+                        .requestMatchers("/api/v1/compras", "/api/v1/compras/**").authenticated()
+
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(ex -> ex
