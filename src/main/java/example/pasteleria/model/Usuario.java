@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -38,5 +39,14 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
+    @Column(nullable = true)
+    private LocalDate fechaRegistro;
+
+    @PrePersist
+    void asignarFechaRegistro() {
+        if (fechaRegistro == null) {
+            fechaRegistro = LocalDate.now();
+        }
+    }
 
 }
