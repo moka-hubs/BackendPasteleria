@@ -52,12 +52,13 @@ public class ProductoService {
         producto.setNombre(request.getNombre());
         producto.setPrecio(request.getPrecio());
         producto.setStock(request.getStock());
+        producto.setCosto(request.getCosto());
         producto.setDescripcion(request.getDescripcion());
         return productoRepository.save(producto);
     }
 
 
-    //Eliminar Producto 
+    //Eliminar Producto
 
     public void eliminarProducto (String codigo){
         Producto producto = buscarPorCodigo(codigo);
@@ -65,7 +66,7 @@ public class ProductoService {
     }
 
 
-    //Actualizar Producto 
+    //Actualizar Producto
     public Producto actualizarProducto (String codigo, ProductoRequest request){
         Producto productoActualizar = buscarPorCodigo(codigo);
         Categoria categoria = obtenerCategoria(request);
@@ -74,6 +75,9 @@ public class ProductoService {
         productoActualizar.setNombre(request.getNombre());
         productoActualizar.setPrecio(request.getPrecio());
         productoActualizar.setStock(request.getStock());
+        if (request.getCosto() != null) {
+            productoActualizar.setCosto(request.getCosto());
+        }
         productoActualizar.setDescripcion(request.getDescripcion());
         return productoRepository.save(productoActualizar);
     }

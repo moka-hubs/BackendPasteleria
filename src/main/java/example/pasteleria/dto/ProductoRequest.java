@@ -34,10 +34,13 @@ public class ProductoRequest {
     private Integer precio;
 
     @NotNull (message = "El stock del producto es obligatorio")
-    @Min(value = 1 , message = "El stock del producto no puede ser inferior a 1  ")
+    @Min(value = 0 , message = "El stock del producto no puede ser inferior a 1  ")
     @Max(value = 100,message = "El stock del producto excede el limite  ")
     private Integer stock;
 
+    @Min (value = 0 , message = "El costo del producto no puede ser negativo")
+    @Max (value = 1600000 , message = "El costo del producto excede el monto maximo permitido")
+    private Integer costo;
 
     @NotBlank (message = "La descripcion del producto no puede estar vacia, es obligatorio")
     @Size (min = 10 , max = 500 , message = "La descripcion del producto debe tener como minimo 10 caracteres y como maximo 500 caracteres")
