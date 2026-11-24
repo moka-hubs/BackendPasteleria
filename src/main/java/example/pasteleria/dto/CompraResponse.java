@@ -9,6 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CompraResponse {
 
+    private Long idPedido;
     private Integer total;
     private List<Detalle> items;
 

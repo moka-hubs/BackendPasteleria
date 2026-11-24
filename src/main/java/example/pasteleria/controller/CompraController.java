@@ -5,6 +5,7 @@ import example.pasteleria.dto.CompraResponse;
 import example.pasteleria.service.CompraService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +20,10 @@ public class CompraController {
 
     private final CompraService compraService;
 
+    // authentication.getName() es el correo que JwtAuthFilter dejo en el contexto.
     @PostMapping
-    public CompraResponse registrar(@Valid @RequestBody CompraRequest request) {
-        return compraService.registrarCompra(request);
+    public CompraResponse registrar(@Valid @RequestBody CompraRequest request,
+                                    Authentication authentication) {
+        return compraService.registrarCompra(authentication.getName(), request);
     }
 }
