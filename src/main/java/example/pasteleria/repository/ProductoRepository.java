@@ -16,4 +16,11 @@ public interface ProductoRepository extends JpaRepository<Producto, String> {
            "WHERE p.codigo = :codigo AND p.stock >= :cantidad")
     int descontarStock(@Param("codigo") String codigo,
                        @Param("cantidad") Integer cantidad);
+
+    long countByStock(Integer stock);
+
+    long countByStockBetween(Integer desde, Integer hasta);
+
+    long countByCostoIsNull();
+
 }

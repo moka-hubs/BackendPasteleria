@@ -30,6 +30,10 @@ public class Producto {
 
     @Column (nullable = false)
     private Integer stock;
+    // Costo de elaboracion. Nullable: los productos anteriores quedan sin costo.
+    // Solo lo ve el admin (no esta en ProductoResponse, que es publico).
+    @Column (nullable = true)
+    private Integer costo;
 
     @Column (nullable = false)
     private String descripcion;
