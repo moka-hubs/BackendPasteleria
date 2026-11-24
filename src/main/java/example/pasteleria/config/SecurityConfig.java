@@ -48,6 +48,8 @@ public class SecurityConfig {
                         // CRUD de usuarios: solo administradores
                         .requestMatchers("/api/v1/usuarios", "/api/v1/usuarios/**").hasAuthority("ADMIN")
 
+                        // Dashboard y gestion de pedidos: solo administradores
+                        .requestMatchers("/api/v1/dashboard", "/api/v1/dashboard/**", "/api/v1/pedidos", "/api/v1/pedidos/**").hasAuthority("ADMIN")
                         //GET y PUT en perfil solo autenticado
                         .requestMatchers("/api/v1/perfil", "/api/v1/perfil/**").authenticated()
 
